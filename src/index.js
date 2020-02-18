@@ -8,7 +8,7 @@ import './styles.scss';
 //3. import and set up store and Provider
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {Reducer} from 'reducers/index';
+import {Reducer} from './reducers/index';
 
 const store = createStore(Reducer);
 
