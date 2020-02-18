@@ -28,12 +28,12 @@ const App = (props) => {
   // };
 
   const removeFeature = item => {
-    // dispatch an action here to remove an item
+    // 13. dispatch an action here to remove an item
     props.removeItem(item);
   };
 
   const buyItem = item => {
-    // dipsatch an action here to add an item
+    // 14. dipsatch an action here to add an item
     props.addItem(item);
   };
 
