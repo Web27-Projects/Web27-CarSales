@@ -1,3 +1,6 @@
+// 5. import my actions
+import {ADD, REMOVE, TOTAL} from './actions/index.js';
+
 // 2. set up the initialState and reducers. Move state from App.js to initialState
 
 export const initialState = {
@@ -18,5 +21,35 @@ export const initialState = {
 };
 
 export const Reducer = (state = initialState, action) => {
-    
+    // 6. Add the actions to the reducer
+    switch(action.type) {
+      case ADD:
+        return {
+          ...state,
+          car: {
+            ...state.car,
+            features: state.car.features.includes(action.payload) ? [...state.car.features] : [...state.car.features, action.payload]
+          }
+        }
+      case REMOVE:
+        return {
+          ...state,
+          car: {
+            ...state.car,
+            features: state.car.features.filter(
+              car => car.id != action.payload.id
+            )
+          }
+        }
+      case TOTAL:
+        return {
+          ...state,
+          car: {
+            ...state.car,
+            additionalPrice = state.additionalPrice + action.payload
+          }
+        }
+      default:
+        return state
+    }
 }
