@@ -2,7 +2,7 @@
 
 export const ADD = 'ADD';
 export const REMOVE = 'REMOVE';
-export const TOTAL = 'TOTAL';
+// export const TOTAL = 'TOTAL';
 
 export const addItem = (feature) => {
     return {
@@ -18,9 +18,9 @@ export const removeItem = (feature) => {
     }
 }
 
-export const total = (total) => {
-    return {
-        type: TOTAL,
-        payload: total
-    }
-}
+// export const total = (total) => {
+//     return {
+//         type: TOTAL,
+//         payload: total
+//     }
+// }

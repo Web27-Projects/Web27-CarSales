@@ -1,5 +1,5 @@
 // 5. import my actions
-import {ADD, REMOVE, TOTAL} from './actions/index.js';
+import {ADD, REMOVE} from './actions/index.js';
 
 // 2. set up the initialState and reducers. Move state from App.js to initialState
 
@@ -28,7 +28,8 @@ export const Reducer = (state = initialState, action) => {
           ...state,
           car: {
             ...state.car,
-            features: state.car.features.includes(action.payload) ? [...state.car.features] : [...state.car.features, action.payload]
+            features: state.car.features.includes(action.payload) ? [...state.car.features] : [...state.car.features, action.payload],
+            price: state.car.price + action.payload.price
           }
         }
       case REMOVE:
@@ -38,17 +39,18 @@ export const Reducer = (state = initialState, action) => {
             ...state.car,
             features: state.car.features.filter(
               car => car.id != action.payload.id
-            )
+            ),
+            price: state.car.price - action.payload.price
           }
         }
-      case TOTAL:
-        return {
-          ...state,
-          car: {
-            ...state.car,
-            additionalPrice: state.additionalPrice + action.payload
-          }
-        }
+      // case TOTAL:
+      //   return {
+      //     ...state,
+      //     car: {
+      //       ...state.car,
+      //       additionalPrice: state.additionalPrice + action.payload
+      //     }
+      //   }
       default:
         return state
     }
