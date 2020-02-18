@@ -46,7 +46,7 @@ export const Reducer = (state = initialState, action) => {
           ...state,
           car: {
             ...state.car,
-            additionalPrice = state.additionalPrice + action.payload
+            additionalPrice: state.additionalPrice + action.payload
           }
         }
       default:
